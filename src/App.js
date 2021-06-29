@@ -9,7 +9,7 @@ class App extends React.Component {
         data: {} };
   }
 
-  componentDidMount() {
+  loadPrices() {
     fetch(this.props.url)
     .then(res => res.json())
     .then(
@@ -19,25 +19,35 @@ class App extends React.Component {
           data: result
         });
       }
-    )
+    );
+  }
+
+  componentDidMount() {
+    this.loadPrices();
+    window.setInterval(
+      () => this.loadPrices(),
+      this.props.pollInterval,
+  );
   }
   render() {
     if(this.state.isLoaded===false) {
       return <div>Loading...</div>
     }
     else if (this.state.isLoaded===true) {
-      console.log(this.state.data["bpi"]["USD"]["rate"])
+      var date = new Date(this.state.data.time.updated);
       return (
               <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
               </header>
                 <div className="container" >
-                    <h2> Lastest Bitcoin Price Index Data </h2>
-                    <h3> USD  &#36; { this.state.data.bpi.USD.rate}  </h3>
-                    <h3> GBP &pound; {this.state.data.bpi.GBP.rate}  </h3>
-                    <h3> EUR &euro; {this.state.data.bpi.EUR.rate}  </h3>
-                    <h5> Last updated: {this.state.data.time.updated} </h5>
+                    <h1> Latest Bitcoin Price Index Data </h1>
+                    <h2>  &#36; { this.state.data.bpi.USD.rate}  <br />
+                          &pound; {this.state.data.bpi.GBP.rate}  <br />
+                          &euro; {this.state.data.bpi.EUR.rate}  <br />
+                    </h2>
+                    <h4> * Last updated: {date.toLocaleString()} </h4>
+                    <div className="footer"><h6> * {this.state.data.disclaimer}</h6> </div>
                 </div>
               </div>
                 
