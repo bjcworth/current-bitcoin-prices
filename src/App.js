@@ -34,20 +34,22 @@ class App extends React.Component {
       return <div>Loading...</div>
     }
     else if (this.state.isLoaded===true) {
-      var date = new Date(this.state.data.time.updated);
+      var date = new Date(this.state.data.lastUpdated);
       return (
               <div className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
               </header>
                 <div className="container" >
-                    <h1> Latest Bitcoin Price Index Data </h1>
-                    <h2>  &#36; { this.state.data.bpi.USD.rate}  <br />
-                          &pound; {this.state.data.bpi.GBP.rate}  <br />
-                          &euro; {this.state.data.bpi.EUR.rate}  <br />
+                    <h1> Current Bitcoin Prices </h1>
+                    <h2>  &#36; { this.state.data.usd}  <br />
+                          &pound; {this.state.data.gbp}  <br />
+                          &euro; {this.state.data.eur}  <br />
                     </h2>
                     <h4> * Last updated: {date.toLocaleString()} </h4>
-                    <div className="footer"><h6> * {this.state.data.disclaimer}</h6> </div>
+                    { <div className="footer">
+                    <h6> * {this.state.data.disclaimer}</h6> 
+                    </div>}
                 </div>
               </div>
                 

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App url="https://api.coindesk.com/v1/bpi/currentprice.json" pollInterval={30000}/>
+    <App url="https://localhost:44386/api/BitcoinPriceIndex" pollInterval={30000}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
