@@ -38,3 +38,13 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  background-color: #282c34;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
