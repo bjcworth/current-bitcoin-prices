@@ -2,6 +2,7 @@ import logo from './Bitcoin.svg';
 import './App.css';
 import React from 'react';
 import { CssBaseline } from '@material-ui/core';
+import AccountBalance from '@material-ui/icons/AccountBalance';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -46,17 +47,20 @@ class App extends React.Component {
                 <img src={logo} className="App-logo" alt="logo" />
               </header>
               <div className="container" >
-                <h1> Current Bitcoin Prices </h1>
+                <h1> Current Bitcoin Prices <AccountBalance fontSize='large'/></h1>
                 <h2>  &#36; {this.state.data.usd}  <br />
-                      &pound; {this.state.data.gbp}  <br />
-                      &euro; {this.state.data.eur}  <br />
+                  &pound; {this.state.data.gbp}  <br />
+                  &euro; {this.state.data.eur}
                 </h2>
-                
-                <h4> * Last updated: {date.toLocaleString()} </h4>
-                <div className="ring-container">
-                  <div className="ringring"></div>
-                  <div className="circle"></div>
-                </div>
+
+                <h4> * Last updated: {date.toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                  <div className="ring-container">
+                    <div className="ringring"></div>
+                    <div className="circle"></div>
+                  </div>
+
+                </h4>
+
                 {<div className="footer">
                   <h6> * {this.state.data.disclaimer}</h6>
                 </div>}
