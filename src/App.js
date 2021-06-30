@@ -5,6 +5,7 @@ import { CssBaseline } from '@material-ui/core';
 import AccountBalance from '@material-ui/icons/AccountBalance';
 import Prices from './Prices.js'
 import Time from './Time.js'
+import Disclaimer from './Disclaimer.js'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -56,9 +57,7 @@ class App extends React.Component {
                 <h1> Current Bitcoin Prices <AccountBalance fontSize='large' /></h1>
                 <Prices prices={this.state.data} />
                 <Time time={this.state.data.lastUpdated} />
-                <footer>
-                  <h6> * {this.state.data.disclaimer}</h6>
-                </footer>
+                <Disclaimer message={this.state.data.disclaimer} />
               </div>
             </div>
           }
