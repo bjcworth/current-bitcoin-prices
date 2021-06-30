@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.isLoaded === true) {
+    if (this.state.isLoaded === false) {
       return (
         <React.Fragment>
           <CssBaseline /> {<div>Loading...</div>}
@@ -44,7 +44,7 @@ class App extends React.Component {
       );
 
     }
-    else if (this.state.isLoaded === false) {
+    else if (this.state.isLoaded === true) {
       return (
         <React.Fragment>
           <CssBaseline /> {
