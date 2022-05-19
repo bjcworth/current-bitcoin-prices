@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## In the project directory, to install, run:
+## Download the project and, in the project directory, run:
 
 ### `npm install`
 
