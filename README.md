@@ -1,6 +1,6 @@
 # Getting Started with current-bitcoin-prices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and requires the latest version of [Node.js](https://nodejs.org/en/) to install/run!
 
 ## Download the project and, in the project directory, run:
 
